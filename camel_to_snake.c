@@ -6,10 +6,9 @@
 /*   By: alvachon <alvachon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 11:39:29 by alvachon          #+#    #+#             */
-/*   Updated: 2022/09/05 11:36:59 by alvachon         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:36:01 by alvachon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 if MAJ; write '_', STR = STR + ' ', write &av.
@@ -21,7 +20,6 @@ if MAJ; write '_', STR = STR + ' ', write &av.
 
 int	main(int ac, char *av[])
 {
-
 	int	i = 0;
 	if (ac > 1)
 	{
@@ -40,7 +38,6 @@ int	main(int ac, char *av[])
 				i++;
 			}
 		}
-
 	}
 	write(1, "\n", 1);
 	return (0);
