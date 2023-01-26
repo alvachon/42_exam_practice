@@ -1,48 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvachon <alvachon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 12:39:23 by alvachon          #+#    #+#             */
-/*   Updated: 2022/12/17 13:50:26 by alvachon         ###   ########.fr       */
+/*   Created: 2022/09/05 12:04:35 by alvachon          #+#    #+#             */
+/*   Updated: 2022/09/06 12:22:44 by alvachon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-int ft_strlen(char *str)
+size_t	ft_strcspn(const char *s, const char *charset)
 {
-  int i = 0;
+  size_t i = 0;
+  size_t j;
   
-  while (str[i])
-    i++;
-  return (i);
-}
-
-char *ft_strdup(char *src)
-{
-  int i = 0;
-  int len = ft_strlen(src);
-  char  *copy = malloc(sizeof(char) * len + 1);
-
-  if (copy == NULL)
-    return (NULL);
-  while (src[i])
+  while (s[i])
   {
-    copy[i] = src[i];
+    j = 0;
+    while (charset[j])
+    {
+      if (s[i] == charset[j])
+        return (i);
+      j++;
+    }
     i++;
   }
-  copy[i] = '\0';
-  return (copy);
+  return (i);
 }
 
 int main()
 {
-  char *str = "allo\n";
-  
-  printf("%s", ft_strdup(str));
-  return(0);
+   int len = strcspn("Hell0","012345");
+   int res = ft_strcspn("Hell0","012345");
+
+   printf("Length of initial segment matching : %d\n", len);
+   printf("Length of initial segment matching : %d\n", res);    
+   return(0);
 }

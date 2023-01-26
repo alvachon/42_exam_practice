@@ -10,48 +10,55 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-result = result * 10 +str[i] - '0'; return (sign * result);
-*/
-
-#define STR str[i]
-
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
-	int	i = 0;
-	int sign = 1;
-	int result = 0;
-	while (STR != '\0')
+	int	i;
+	int	result;
+	int	sign;
+
+	i = 0;
+	result = 0;
+	sign = 1;
+	while (str[i] <= 32)
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 		{
-			sign = -1;
-			i++;
+			sign *= -1;
 		}
-		if (STR >= '0' && STR <= '9')
-		{
-			result = result * 10 + str[i] - '0';
-			i++;
-		}
-		else if(!(STR >= '0' && STR <= '9'))
-			i++;
+		i++;
 	}
-	return (sign * result);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result *= 10;
+		result += str[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }
 
 int main()
 {
-  char str2[20] = "111";
-  char str1[20] = "111";
-	int	n_1 = 0;
-	int	n_2 = 0;
-
-  	n_1 = ft_atoi(str2);
-  	n_2 = atoi(str1);
-	printf("%d\n", n_1);
-	printf("%d\n", n_2);
-	return 0;
+    printf("ft_atoi: %d\n", ft_atoi("123456"));
+    printf("atoi: %d\n", atoi("123456"));
+    printf("ft_atoi: %d\n", ft_atoi("12three45678"));
+    printf("atoi: %d\n", atoi("12three45678"));
+    printf("ft_atoi: %d\n", ft_atoi("Hello World !"));
+    printf("atoi: %d\n", atoi("Hello World !"));
+    printf("ft_atoi: %d\n", ft_atoi("+42 BLAH!"));
+    printf("atoi: %d\n", atoi("+42 BLAH!"));
+    printf("ft_atoi: %d\n", ft_atoi("-42"));
+    printf("atoi: %d\n", atoi("-42"));
+    printf("ft_atoi: %d\n", ft_atoi("        +42"));
+    printf("atoi: %d\n", atoi("        +42"));
+    printf("ft_atoi: %d\n", ft_atoi("\t\n\v\f\r 42"));
+    printf("atoi: %d\n", atoi("\t\n\v\f\r 42"));
+    printf("ft_atoi: %d\n", ft_atoi("5"));
+    printf("atoi: %d\n", atoi("5"));
+    return (0);
 }
+  

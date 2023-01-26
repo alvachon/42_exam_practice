@@ -27,9 +27,7 @@ int	is_power_of_2(unsigned int n)
 		return (0);
 	while (n % 2 == 0)//(!(n % 2))
 		n /= 2;//n = n / 2;
-	return ((n == 1) ? 1 : 0);//if (n == 1) return 1; else return (0);
-
-	return(n > 0 && !(n & (n - 1)));//comprend pas ste partie la
+	return ((n == 1) ? 1 : 0);
 }
 
 int	main(int ac, char **av)

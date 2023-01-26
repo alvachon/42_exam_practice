@@ -13,34 +13,38 @@
 /*
 while (s1[i] && s2[i] && s1[i] == s2[i]) i++; return (s1[i] - s2[i])
 */
-
-#include <unistd.h>
 #include <string.h>
 #include <stdio.h>
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
-
-	i = 0;
+	int	i = 0;
 	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-	{
 		i++;
-	}
 	return (s1[i] - s2[i]);
 }
 
-#include <stdio.h>
-
 int	main(void)
 {
-	char	s1[120] = "salut";
-	char	s2[120] = "bonjour";
-
-	printf("s1 = %s, %s\n", s1, s2);
-	printf("s2 = %s \n", s2);
-	ft_strcmp(s1, s2);
-	//strcmp(s1, s2);
-	printf("s1 - s2 = %d \n", ft_strcmp(s1, s2));
-	//printf("s1 - s2 = %d \n", strcmp(s1, s2));
+    char str1[15];
+    char str2[15];
+    int ret;
+    int res;
+    
+    strcpy(str1, "abcdef");
+    strcpy(str2, "ABCEDF");
+    ret = strcmp(str1, str2);
+    if (ret < 0)
+      printf("str1 is less than str2\n");
+    else if (ret > 0)
+      printf("str2 is less than str1\n");
+    else
+      printf("str2 is equal to str1\n");
+    res = ft_strcmp(str1, str2);
+    if (res < 0)
+      printf("str1 is less than str2\n");
+    else if (ret > 0)
+      printf("str2 is less than str1\n");
+    else
+      printf("str2 is equal to str1\n");
 }

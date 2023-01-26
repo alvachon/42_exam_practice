@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strspn.c                                        :+:      :+:    :+:   */
+/*   ft_strbrk.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvachon <alvachon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 12:04:35 by alvachon          #+#    #+#             */
-/*   Updated: 2022/09/06 12:22:44 by alvachon         ###   ########.fr       */
+/*   Created: 2022/09/05 12:57:15 by alvachon          #+#    #+#             */
+/*   Updated: 2022/09/29 10:00:24 by alvachon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// check for matching character
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strspn(const char *s, const char *charset)
+char *ft_strpbrk(const char *s1, const char *s2)
 {
-  int i = 0;
   int j;
   
-  if (s[i])
+  while (*s1)
   {
     j = 0;
-    while (charset[j])
+    while (s2[j])
     {
-      if (s[i] == charset[j])
-      {
-        i++;
-        j = 0;
-      }
+      if (*s1 == s2[j])
+        return ((char *)s1);
       j++;
     }
+    s1++;
   }
-  return (i);
+  return (NULL);
 }
 
-int main()
+int main(void)
 {
-   int len = strspn("42geeksfor geeks","4123456789g");
-   int res = ft_strspn("42geeksfor geeks","4123456789g");
-
-   printf("Length of initial segment matching : %d\n", len);
-   printf("Length of initial segment matching : %d\n", res);    
-   return(0);
+  char *str1 = "awsrtg94";
+  char *str2 = "dr3";
+  char *s1 = "awsrtg94";
+  char *s2 = "dr3";
+  char *ret;
+  
+  ret = strpbrk(s1, s2);
+  printf("%c\n", *ret);
+  printf("%c\n", *ft_strpbrk(str1, str2));
+  return (0);
 }
