@@ -31,7 +31,7 @@ void ft_mult_alpha(char *str, char min, char max)
 	int	count = 0;
 	while (str[i])
 	{
-		if (str[i] >= min &&str[i] <= max)
+		if (str[i] >= min && str[i] <= max)
 		{
 			count = str[i] - min;
 			while (count >= 0)
