@@ -1,5 +1,6 @@
 #include <unistd.h>
 
+// Need update
 //Learn to work with modulo and division in base 10.
 
 void	ft_write_number(int number)
