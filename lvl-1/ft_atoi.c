@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
 int	ft_atoi(char *str)
 {
@@ -41,7 +41,7 @@ int	ft_atoi(char *str)
 	return (result * sign);
 }
 
-int main()
+/*int main()
 {
     printf("ft_atoi: %d\n", ft_atoi("123456"));
     printf("atoi: %d\n", atoi("123456"));
@@ -60,5 +60,5 @@ int main()
     printf("ft_atoi: %d\n", ft_atoi("5"));
     printf("atoi: %d\n", atoi("5"));
     return (0);
-}
+}*/
   
