@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
+//Need an update
 //easy version, need to add atoi and putnbr ... 
 
 int	ft_is_prime(int n)
