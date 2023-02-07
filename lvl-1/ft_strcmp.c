@@ -1,6 +1,6 @@
 
-#include <string.h>
-#include <stdio.h>
+//#include <string.h>
+//#include <stdio.h>
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -10,7 +10,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int	main(void)
+/*int	main(void)
 {
     char str1[15];
     char str2[15];
@@ -33,4 +33,4 @@ int	main(void)
       printf("str2 is less than str1\n");
     else
       printf("str2 is equal to str1\n");
-}
+}*/
