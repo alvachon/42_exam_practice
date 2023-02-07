@@ -1,6 +1,6 @@
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
 //Length of initial segment matching
 
@@ -23,7 +23,7 @@ size_t	ft_strcspn(const char *s, const char *reject)
   return (i);
 }
 
-int main()
+/*int main()
 {
    int len = strcspn("Hell0","012345");
    int res = ft_strcspn("Hell0","012345");
@@ -31,4 +31,4 @@ int main()
    printf("Qt before matchset target in string: %d\n", len);
    printf("Qt before matchset target in string: %d\n", res);    
    return(0);
-}
+}*/
