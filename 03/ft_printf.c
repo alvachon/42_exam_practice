@@ -37,6 +37,11 @@ int	print_nb(long long int d, int base)
 	int	 l = 0;
 	char *hexa = "0123456789abcdef";
 
+	if (d == -2147483648)
+	{
+		write(1, "2147483648", 10);
+		return (10);
+	}
 	if (d < 0)
 	{
 		d *= -1;
@@ -78,7 +83,7 @@ int	ft_printf(const char *fmt, ...)
 		if (fmt[0] == '%' && fmt[1] == 'x')
 		{
 			fmt += 2;
-			d = (long long int)va_arg(ap, int);
+			d = (unsigned int)va_arg(ap, int);
 			l += print_nb(d, 16);
 			continue;
 		}
