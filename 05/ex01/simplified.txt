@@ -1,0 +1,42 @@
+
+1. **Create Warlock class:**
+   - Forbid the use of the switch statement.
+   - Create a Warlock class with a constructor that takes a name and title.
+   - Include member functions:
+     - `learnSpell` (takes a pointer to ASpell)
+     - `forgetSpell` (takes a string corresponding to a spell's name)
+     - `launchSpell` (takes a string spell name and a reference to ATarget)
+
+2. **Create ASpell abstract class:**
+   - In Coplien's form (implement the Rule of Three).
+   - Protected attributes: name (string) and effects (string).
+   - Member functions:
+     - `getName` (returns string)
+     - `getEffects` (returns string)
+     - `clone` (pure virtual, returns a pointer to ASpell)
+     - `launch` (takes a reference to constant ATarget)
+
+3. **Create Fwoosh class (implementation of ASpell):**
+   - Default constructor sets name to "Fwoosh" and effects to "fwooshed".
+   - Implement the `clone` method to return a pointer to a new Fwoosh object.
+
+4. **Create ATarget abstract class:**
+   - In Coplien's form.
+   - Protected attribute: type (string).
+   - Member functions:
+     - `getType` (returns a reference to a constant string)
+     - `clone` (pure virtual, returns a pointer to ATarget)
+     - `getHitBySpell` (takes a reference to constant ASpell)
+
+5. **Create Dummy class (implementation of ATarget):**
+   - Constructor takes its type as a parameter.
+   - Implement the `clone` method.
+
+6. **Add member functions to the Warlock class:**
+   - `learnSpell` (takes a pointer to ASpell)
+   - `forgetSpell` (takes a string corresponding to a spell's name)
+   - `launchSpell` (takes a string spell name and a reference to ATarget)
+
+7. **Implement the provided test main and expected output.**
+
+Remember to manage memory properly (e.g., delete learned spells in the Warlock's destructor), and consider using appropriate data structures to store known spells in the Warlock class.
