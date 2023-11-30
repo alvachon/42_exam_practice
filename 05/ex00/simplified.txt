@@ -1,0 +1,32 @@
+
+1. Create a `Warlock` class with private attributes:
+   - `name` (string) X
+   - `title` (string) X
+
+2. Implement the following getters:
+   - `getName`, returning a reference to a constant string
+   - `getTitle`, returning a reference to a constant string
+   Both should be callable on a constant `Warlock` object.
+
+3. Implement the setter:
+   - `setTitle`, returning void, taking a reference to a constant string
+
+4. Add a constructor that takes the name and title as parameters. The `Warlock` should not be copyable, instantiable by copy, or instantiable without a name and title.
+
+5. Upon creation, the `Warlock` should say:
+   - `<NAME>: This looks like another boring day.`
+
+6. Upon death, the `Warlock` should say:
+   - `<NAME>: My job here is done!`
+
+7. Implement the function:
+   - `void introduce() const;`
+
+8. The `introduce` function should display:
+   - `<NAME>: I am <NAME>, <TITLE>!`
+
+9. Create a test main function as provided in the example.
+
+10. Compile and run the program, ensuring that the output matches the specified format.
+
+Remember to replace placeholders like `<NAME>`, `<TITLE>`, etc., with the appropriate values.
