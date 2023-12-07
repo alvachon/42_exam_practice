@@ -1,31 +1,18 @@
 #include "ASpell.hpp"
+#include "ATarget.hpp"
 
-ASpell::ASpell(const std::string& spellName, const std::string& spellEffects) : spellName(spellName), spellEffects(spellEffects)
-{
-    //std::cout << spellName << ": This looks like another boring day." << std::endl;
-}
-
-ASpell::~ASpell()
-{
-    //std::cout << spellName << ": My job here is done!" << std::endl;
-}
-
-ASpell::ASpell(const ASpell& other) : spellName(other.spellName), spellEffects(other.spellEffects)
-{
-    *this = other;
-}
+ASpell::ASpell(const std::string& name, const std::string& effects) : name(name), effects(effects){};
+ASpell::ASpell(const ASpell& other){ *this = other; };
+ASpell::~ASpell(){};
 
 ASpell& ASpell::operator=(const ASpell& other)
 {
-    spellName = other.spellName;
-    spellEffects = other.spellEffects;
+    name = other.name;
+    effects = other.effects;
     return *this;
-}
+};
 
-//GETTERS (2)
-const std::string& ASpell::getName() const {
-    return spellName;
-}
-const std::string& ASpell::getEffects() const {
-    return spellEffects;
-}
+const std::string& ASpell::getName()        const { return (this->name); };
+const std::string& ASpell::getEffects()     const { return (this->effects); };
+
+void ASpell::launch(const ATarget& target)  const { target.getHitBySpell(*this); };

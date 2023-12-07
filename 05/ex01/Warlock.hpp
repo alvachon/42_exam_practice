@@ -1,33 +1,39 @@
 #ifndef WARLOCK_HPP
-#define WARLOCK_HPP
+# define WARLOCK_HPP
 
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+#include "ASpell.hpp"
 
 class Warlock {
     private:
         std::string name;
         std::string title;
-        //std::vector<ASpell*> spells;
+        std::vector<ASpell*> spells;
 
-        // Private declarations to prevent copy and default construction
+        //COPLIEN
+        Warlock();
         Warlock(const Warlock& other);
         Warlock& operator=(const Warlock& other);
 
     public:
-        Warlock(const std::string& name, const std::string& title);
-        ~Warlock();
-
         //GETTERS
         const std::string& getName() const;
         const std::string& getTitle() const;
 
         //SETTERS
-        void setTitle(const std::string& newTitle);
+        void setTitle(const std::string& title);
 
         //FUNCTIONS
         void introduce() const;
+        void learnSpell(ASpell* spell);
+        void launchSpell(const std::string& spellName, const ATarget& target) const;
+        void forgetSpell(const std::string& spellName);
 
+        //COPLIEN
+        Warlock(const std::string& name, const std::string& title);
+        ~Warlock();
 };
 
-#endif // WARLOCK_HPP
+#endif //WARLOCK.HPP

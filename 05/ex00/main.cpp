@@ -1,16 +1,20 @@
 #include "Warlock.hpp"
 
 int main() {
+    
+    Warlock Will();//This should not compile (OK)
     Warlock const richard("Richard", "Mistress of Magma");
-    richard.introduce();
+
     std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
 
     Warlock* jack = new Warlock("Jack", "the Long");
-    jack->introduce();
+    std::cout << jack->getName() << " - " << jack->getTitle() << std::endl;
     jack->setTitle("the Mighty");
+    std::cout << jack->getName() << " - " << jack->getTitle() << std::endl;
+
+    richard.introduce();
     jack->introduce();
 
     delete jack;
-
     return 0;
 }

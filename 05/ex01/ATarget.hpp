@@ -1,28 +1,27 @@
 #ifndef ATARGET_HPP
-#define ATARGET_HPP
+# define ATARGET_HPP
 
-#include <string>
 #include <iostream>
+#include <string>
+
+class ASpell;
 
 class ATarget {
-    protected:
-        std::string targetType;
-
-    private:
-        // Private declarations to prevent copy and default construction
-        ATarget(const ATarget& other);
-        ATarget& operator=(const ATarget& other);
 
     public:
-        ATarget(const std::string& targetType);
+        ATarget(const std::string& type);
+        ATarget(const ATarget& other);
         virtual ~ATarget();
 
-    //GETTERS
-    const std::string& getType() const;
+        ATarget& operator=(const ATarget& other);
 
-    virtual ATarget* clone() const = 0;
-    //virtual void launch(const ATarget& target) const;
+        const std::string& getType() const;
+        void getHitBySpell(const ASpell& spell) const;
 
+        //VIRTUAL
+        virtual ATarget* clone() const = 0;
+    protected:
+        std::string type;
 };
 
-#endif // ATARGET_HPP
+#endif //ATARGET.HPP

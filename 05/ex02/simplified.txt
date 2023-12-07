@@ -1,0 +1,42 @@
+Spells:
+Fwoosh Spell:
+
+Name: "Fwoosh"
+Effects: "fwooshed"
+Clone method returns a new Fwoosh object.
+Fireball Spell:
+
+Name: "Fireball"
+Effects: "burnt to a crisp"
+Implement Clone method.
+Polymorph Spell:
+
+Name: "Polymorph"
+Effects: "turned into a critter"
+Implement Clone method.
+Target:
+BrickWall Target:
+Type: "Inconspicuous Red-brick Wall"
+Implement Clone method.
+SpellBook Class:
+Canonical form (Rule of Three or Rule of Five)
+Functions:
+void learnSpell(ASpell*): Copies a spell into the book.
+void forgetSpell(const std::string&): Deletes a spell from the book.
+ASpell* createSpell(const std::string&): Creates and returns a spell based on its name.
+Warlock Class:
+Member Variables:
+Name
+Title
+SpellBook (created and destroyed with the Warlock)
+Functions:
+void learnSpell(ASpell*): Calls the SpellBook's learnSpell method.
+void forgetSpell(const std::string&): Calls the SpellBook's forgetSpell method.
+void launchSpell(const std::string&, ATarget&): Uses SpellBook to create and launch spells.
+void introduce() const: Introduces the Warlock.
+TargetGenerator Class:
+Canonical form (Rule of Three or Rule of Five)
+Functions:
+void learnTargetType(ATarget*): Teaches a target type to the generator.
+void forgetTargetType(const std::string&): Forgets a target type if known.
+ATarget* createTarget(const std::string&): Creates and returns a target based on its type.
