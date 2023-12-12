@@ -49,24 +49,8 @@ ASpell* SpellBook::createSpell(const std::string& spellName)
                                return s->getName() == spellName;
                            });
 
-    if (it != spells.end()) {
+    if (it != spells.end())
         return (*it)->clone();
-    } else {
-        return nullptr;
-    }
-}
-
-/*
-ASpell* SpellBook::createSpell(const std::string& spellName)
-{
-    if (spellName == "Fwoosh")
-        return new Fwoosh();
-    else if (spellName == "Fireball")
-        return new Fireball();
-    else if (spellName == "Polymorph")
-        return new Polymorph();
     else
-        return nullptr;  // Unknown spell name
+        return nullptr;
 }
-*/
-
